@@ -1,0 +1,24 @@
+<el-form :inline="true" :model="searchData" label-width="85px" size="mini">
+    <el-form-item label="入库单号：">
+        <el-input v-model="searchData.code" placeholder="" style="width: 130px"></el-input>
+    </el-form-item>
+    <el-form-item label="入库类型：">
+        <el-select v-model="searchData.store_in_type"
+
+                   placeholder="请选择" style="width: 130px">
+            <el-option
+                    v-for="item in options"
+                    :value="item.label"
+                    :key="item.value"
+                    :label="item.label">
+            </el-option>
+        </el-select>
+    </el-form-item>
+    <el-form-item label="货架：">
+        <el-input v-model="searchData.shelves" placeholder="" style="width: 130px" :disabled="true"></el-input>
+    </el-form-item>
+    <br>
+    <el-form-item label="二维码：">
+        <el-input v-model="searchData.qr_code" placeholder="" type="textarea" style="width: 800px" rows="15" :disabled="true"></el-input>
+    </el-form-item>
+</el-form>

@@ -1,0 +1,47 @@
+{% extends 'public/base.html' %}
+{% block title %} 出库 {% endblock %}
+{% block script %} <script src="/static/js/store_out.js?v=1.1"> </script>{% endblock %}
+{% block style %}{% endblock %}
+
+{# 主体内容#}
+
+{% block content %}
+    <div class="content-wrapper" id="app">
+        <!-- 面包屑导航 -->
+        <section class="content-header"><h1>仓库> 出库管理</h1></section>
+        <!-- 主画面展示 -->
+        <section class="content">
+               <!-- 查询-->
+               {% include 'base/store/store_out/searchForm.html' %}
+               <!-- 主画面-->
+               {% include 'base/store/store_out/mainTable.html' %}
+{#               <!-- 添加出库单-->#}
+{#               {% include 'store/store_out/addOrderDialog.html' %}#}
+{#               <!-- 添加出库单-->#}
+{#               {% include 'store/store_out/handleProductDialog.html' %}#}
+{#               <!-- 查看出库单-->#}
+{#               {% include 'store/store_out/lookOrderDialog.html' %}#}
+        </section>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

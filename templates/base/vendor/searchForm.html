@@ -1,0 +1,19 @@
+<el-form :inline="true"
+         :model="searchFormData"
+         ref="searchForm" size="mini">
+    <el-form-item label="供应商中文名">
+        <el-autocomplete
+            class="inline-input"
+{#            v-model="searchFormData.name"#}
+{#            :fetch-suggestions="querySearch"#}
+            placeholder="请输入内容"
+            value-key = 'vendor_text_cn'
+        >
+        </el-autocomplete>
+    </el-form-item>
+
+    <div class="pull-right">
+        <el-button type="success" @click="doSearch" size="mini">查询</el-button>
+        <el-button type="success" @click="addFormDialogVisible = true" size="mini">添加</el-button>
+    </div>
+</el-form>

@@ -1,0 +1,20 @@
+<div class="table_style">
+    <el-table
+            :data="mainTableData"
+            stripe>
+        <el-table-column prop="vendor_cd" sortable label="供应商编号"></el-table-column>
+        <el-table-column prop="vendor_text_en" sortable label="供应商英文名"></el-table-column>
+        <el-table-column prop="vendor_text_cn" sortable label="供应商中文名"></el-table-column>
+        <el-table-column label="操作" fixed="right" 　align="center">
+            <template slot-scope="scope">
+                <el-button @click.native.prevent="handleEditFormDialogVisible(scope.$index,scope.row)" type="text"
+                           size="mini"> 编辑
+                </el-button>
+                <el-button @click.native.prevent="doDelete(scope.$index, mainTableData, scope.row)"
+                           type="text" size="mini"> 删除
+                </el-button>
+            </template>
+        </el-table-column>
+    </el-table>
+{#  {% include 'public/page.html' %}#}
+</div>

@@ -1,0 +1,44 @@
+{% extends 'public/base.html' %}
+{% block title %} 入库 {% endblock %}
+{% block script %} <script src="/static/js/material.js?v=1.01"> </script>{% endblock %}
+{% block style %}{% endblock %}
+
+{# 主体内容#}
+
+{% block content %}
+    <div class="content-wrapper" id="app">
+        <!-- 面包屑导航 -->
+        <section class="content-header"><h1>基础信息> 原料</h1></section>
+        <!-- 主画面展示 -->
+        <section class="content">
+            <!-- 查询-->
+            {% include 'base/material/searchForm.html' %}
+            <!-- 主画面-->
+            {% include 'base/material/mainTable.html' %}
+            <!-- 添加窗口-->
+            {% include 'base/material/addFormDialog.html' %}
+            {% include 'base/material/editFormDialog.html' %}
+        </section>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

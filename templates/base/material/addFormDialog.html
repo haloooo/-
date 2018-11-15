@@ -1,0 +1,27 @@
+<el-dialog title="原料-添加" :visible.sync="addFormDialogVisible"
+           class="dialog" :append-to-body="true" width="30%" >
+    <el-form :model="addFormData" :rules="addOrEditFormDataRules" ref="addForm"
+             label-width="100px"　size="mini">
+
+        <el-form-item label="产品编号" prop="apn_cd">
+            <el-input style="width:180px"　v-model="addFormData.apn_cd" maxlength="32"></el-input>
+        </el-form-item>
+
+        <el-form-item label="产品英文名" prop="apn_text_en">
+            <el-input style="width:180px" v-model="addFormData.apn_text_en" maxlength="32"></el-input>
+        </el-form-item>
+
+        <el-form-item label="产品中文名" prop="apn_text_cn">
+            <el-input style="width:180px" v-model="addFormData.apn_text_cn" maxlength="32"></el-input>
+        </el-form-item>
+
+    </el-form>
+
+    <div slot="footer" class="dialog-footer">
+        <el-button
+            v-loading.fullscreen.lock="fullscreenLoading"
+            type="success"
+            @click="doAdd('addForm')" size="mini">确 定</el-button>
+        <el-button @click="addFormDialogVisible = false" size="mini">取 消</el-button>
+    </div>
+</el-dialog>

@@ -1,0 +1,36 @@
+<div class="table_style">
+    <el-table
+            :data="mainTableData"
+            :cell-style="isCenter" style="width: 100%;">
+        <el-table-column prop="apn_cd" label="产品编号" header-align="center" min-width="120" sortable fixed></el-table-column>
+        <el-table-column prop="apn_text_en" label="产品英文名" header-align="center" min-width="120" sortable></el-table-column>
+        <el-table-column prop="apn_text_cn" label="产品中文名" header-align="center" min-width="120" sortable></el-table-column>
+        <el-table-column prop="status_id" label="状态" header-align="center" min-width="120" sortable></el-table-column>
+        <el-table-column prop="user_id" label="用户" header-align="center" min-width="120" sortable></el-table-column>
+        <el-table-column prop="update_at" label="修改时间" header-align="center" min-width="120" sortable></el-table-column>
+
+        <el-table-column label="操作" header-align="center" min-width="80" fixed="right">
+            <template slot-scope="scope">
+                <el-button @click.native.prevent="showEdit(scope.$index,scope.row)" type="text"
+                           size="mini"> 编辑
+                </el-button>
+                <el-button @click.native.prevent="doDelete(scope.$index, mainTableData, scope.row)"
+                           type="text" size="mini"> 删除
+                </el-button>
+            </template>
+        </el-table-column>
+    </el-table>
+
+    <el-pagination class="pull-right clearfix pages"
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          @prev-click="prevClick"
+          @next-click="nextClick"
+          :current-page="page.currentPage"
+          :page-sizes="page.pageSizes"
+          :page-size="page.pageSize"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="page.totalDataNumber">
+    </el-pagination>
+
+</div>

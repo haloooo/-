@@ -1,0 +1,31 @@
+<el-dialog title="供应商-添加" :visible.sync="addFormDialogVisible"
+           class="dialog" :append-to-body="true" width="30%" >
+    <el-form :model="addFormData" :rules="addOrEditFormDataRules" ref="addForm"
+             label-width="100px"　size="mini">
+
+        <el-form-item label="供应商名" prop="name">
+            <el-input style="width:180px"　v-model="addFormData.name" maxlength="32"></el-input>
+        </el-form-item>
+
+        <el-form-item label="联系人" prop="contact">
+            <el-input style="width:180px" v-model="addFormData.contact" maxlength="8"></el-input>
+        </el-form-item>
+
+        <el-form-item label="电话" prop="phone">
+            <el-input style="width:180px" v-model="addFormData.phone" maxlength="36"></el-input>
+        </el-form-item>
+
+        <el-form-item label="传真" prop="fax">
+            <el-input style="width:180px" v-model="addFormData.fax" maxlength="36"></el-input>
+        </el-form-item>
+
+    </el-form>
+
+    <div slot="footer" class="dialog-footer">
+        <el-button 
+            v-loading.fullscreen.lock="fullscreenLoading" 
+            type="success"
+            @click="doAdd('addForm')" size="mini">确 定</el-button>
+        <el-button @click="addFormDialogVisible = false" size="mini">取 消</el-button>
+    </div>
+</el-dialog>

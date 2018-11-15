@@ -1,0 +1,46 @@
+<div class="table_style">
+    <el-table :data="mainTableData" border style="width: 100%;">
+        <el-table-column prop="name" label="部品英文名称" sortable  :min-width="100" align="center">
+        </el-table-column>
+        <el-table-column prop="usage" label="Usage" sortable  :min-width="100" align="center">
+        </el-table-column>
+        <el-table-column prop="chinese_name" label="部品中文名称" sortable  :min-width="120" align="center">
+        </el-table-column>
+        <el-table-column prop="apn" label="APN"  sortable :min-width="80" align="center">
+        </el-table-column>
+        <el-table-column prop="rev" label="Rev" sortable :min-width="110" align="center">
+        </el-table-column>
+        <el-table-column prop="vendor" label="Vendor" sortable :min-width="90" align="center">
+        </el-table-column>
+        <el-table-column prop="config" label="Config" sortable :min-width="110" align="center">
+        </el-table-column>
+        <el-table-column prop="remark" label="Remark" sortable :min-width="110" align="center">
+        </el-table-column>
+        <el-table-column prop="qty" label="计划出货量" sortable :min-width="110" align="center">
+        </el-table-column>
+        <el-table-column prop="shelves" label="货架" sortable :min-width="110" align="center">
+        </el-table-column>
+        <el-table-column prop="actual_shipment" label="实际出货" sortable :min-width="110" align="center">
+        </el-table-column>
+    </el-table>
+    <el-pagination
+            class="pull-right clearfix pages"
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
+            :current-page.sync="page.currentPage"
+            :page-sizes="page.pageSizes"
+            :page-size="page.pageSize"
+            layout="total, sizes, prev, pager, next"
+            :total="page.totalDataNumber">
+    </el-pagination>
+</div>
+<div align="center">
+    <el-button type="success" @click="doSearch">出库</el-button>
+    <el-button type="info" @click="doSearch">取消</el-button>
+</div>
+
+
+
+
+
+

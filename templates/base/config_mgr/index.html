@@ -1,0 +1,41 @@
+{% extends 'public/base.html' %}
+{% block title %} Config管理 {% endblock %}
+{% block script %} <script src="/static/js/config_mgr.js?v=1.01"> </script>{% endblock %}
+{% block style %}{% endblock %}
+
+{# 主体内容#}
+
+{% block content %}
+    <div class="content-wrapper" id="app">
+        <!-- 面包屑导航 -->
+        <section class="content-header"><h1>生产> Config管理</h1></section>
+        <!-- 主画面展示 -->
+        <section class="content">
+               <!-- 查询-->
+               {% include 'base/config_mgr/searchForm.html' %}
+               <!-- 主画面-->
+               {% include 'base/config_mgr/mainTable.html' %}
+        </section>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

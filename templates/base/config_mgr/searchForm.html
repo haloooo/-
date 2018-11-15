@@ -1,0 +1,7 @@
+<el-form :inline="true" :model="searchData" label-width="125px" size="mini">
+    <el-form-item label="Config名称">
+        <el-input v-model="searchData.code" placeholder="" style="width: 260px"></el-input>
+    </el-form-item>
+    <el-button style="width: 100px;margin-left: 50px" @click="query_plan">查询</el-button>
+    <el-button style="width: 100px;margin-left: 50px" @click="create_plan">创建</el-button>
+</el-form>

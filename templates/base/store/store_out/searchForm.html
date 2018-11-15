@@ -1,0 +1,25 @@
+<el-form :inline="true" :model="searchData" label-width="85px" size="mini">
+    <el-form-item label="出库类型：">
+        <el-select v-model="searchData.store_out_type"
+
+                   placeholder="请选择" style="width: 130px">
+            <el-option
+                    v-for="item in options"
+                    :value="item.label"
+                    :key="item.value"
+                    :label="item.label">
+            </el-option>
+        </el-select>
+    </el-form-item>
+    <br>
+    <el-form-item label="Config：">
+        <el-input v-model="searchData.config_name" placeholder="" style="width: 130px"></el-input>
+    </el-form-item>
+    <el-form-item>
+        <el-button type="success" @click="doSearch">查询</el-button>
+    </el-form-item>
+    <br>
+    <el-form-item label="二维码：">
+        <el-input v-model="searchData.qr_code" placeholder="" type="textarea" style="width: 800px" rows="6" :disabled="true"></el-input>
+    </el-form-item>
+</el-form>

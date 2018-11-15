@@ -1,0 +1,10 @@
+<el-pagination
+        class="pull-right clearfix pages"
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page.sync="page.currentPage"
+        :page-sizes="page.pageSizes"
+        :page-size="page.pageSize"
+        layout="total, sizes, prev, pager, next"
+        :total="page.totalDataNumber">
+</el-pagination>
